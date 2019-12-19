@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+
+        xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+>
+    <Button android:id="@+id/setting"
+            android:layout_width="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:onClick="onClick"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/setting"
+            android:layout_height="25dp"/>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/top_mine"
+            android:background="#ff4e22">
+        <LinearLayout
+                android:id="@+id/mine_top"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal">
+            <com.facebook.drawee.view.SimpleDraweeView android:id="@+id/head_pic"
+                                                       android:layout_width="50dp"
+                                                       android:layout_height="50dp"
+                                                       android:layout_marginLeft="10dp"
+                                                       android:background="@drawable/head_pic"
+                                                       fresco:actualImageScaleType="centerInside"
+                                                       fresco:roundAsCircle="true"
+                                                       fresco:roundingBorderColor="@color/Home_top"
+                                                       fresco:roundingBorderWidth="1dp"
+                                                       android:src="@drawable/head_pic_man"
+                                                       android:scaleType="fitXY">
+            </com.facebook.drawee.view.SimpleDraweeView>
+            <TextView android:id="@+id/name"
+                      android:layout_height="wrap_content"
+                      android:layout_width="wrap_content"
+                      android:textColor="#ffffff"
+                      android:text="未登录"
+                      android:clickable="true"
+                      android:textSize="20dp"
+                      android:layout_marginLeft="10dp"
+                      android:layout_marginTop="10dp"/>
+        </LinearLayout>
+        <LinearLayout
+                android:id="@+id/mine_four"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/mine_top"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal">
+
+            <TableLayout android:layout_width="match_parent"
+                         android:layout_height="80dp"
+                         android:layout_marginLeft="10dp"
+            >
+                <TableRow>
+                    <TextView android:id="@+id/shoucang"
+                              android:layout_height="wrap_content"
+                              android:layout_width="80dp"
+                              android:textColor="#ffffff"
+                              android:text="\n收藏"
+                              android:clickable="true"
+                              android:textSize="16dp"
+                              android:layout_marginLeft="10dp"
+                              android:layout_marginTop="10dp"/>
+                    <TextView android:id="@+id/guanzhu"
+                              android:layout_height="wrap_content"
+                              android:layout_width="80dp"
+                              android:textColor="#ffffff"
+                              android:clickable="true"
+                              android:text="\n关注"
+                              android:textSize="16dp"
+                              android:layout_marginLeft="10dp"
+                              android:layout_marginTop="10dp"/>
+                    <TextView android:id="@+id/xihuan"
+                              android:layout_height="wrap_content"
+                              android:layout_width="80dp"
+                              android:textColor="#ffffff"
+                              android:text="\n喜欢"
+                              android:clickable="true"
+                              android:textSize="16dp"
+                              android:layout_marginLeft="10dp"
+                              android:layout_marginTop="10dp"/>
+                    <TextView android:id="@+id/zuji"
+                              android:layout_height="wrap_content"
+                              android:layout_width="80dp"
+                              android:textColor="#ffffff"
+                              android:clickable="true"
+                              android:text="\n历史订单"
+                              android:textSize="16dp"
+                              android:layout_marginLeft="10dp"
+                              android:layout_marginTop="10dp"/>
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <Button android:id="@+id/show_order"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/top_mine"
+            android:text="历史订单"
+            android:visibility="invisible"
+            android:background="#C2C2C2"/>
+    <Button android:id="@+id/take_photo"
+            android:visibility="invisible"
+
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@+id/show_order"
+
+            android:layout_below="@+id/top_mine"
+            android:text="拍照"
+            android:background="#C2C2C2"/>
+    <Button android:id="@+id/pro"
+            android:visibility="invisible"
+
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@+id/take_photo"
+
+            android:layout_below="@+id/top_mine"
+            android:text="进度条"
+            android:background="#C2C2C2"/>
+    <ProgressBar
+            android:visibility="invisible"
+
+            android:id="@+id/progress_bar_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pro"/>
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/mine_list"
+
+            android:layout_below="@+id/top_mine"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+    />
+
+</RelativeLayout>

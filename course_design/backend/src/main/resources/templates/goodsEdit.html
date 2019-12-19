@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+<!--    <meta name="_csrf" th:content="${_csrf.token}"/>-->
+<!--    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>-->
+
+    <title>商家中心</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            width: 100%;
+            height: 85px;
+            background-color: #e2231a;
+        }
+        .header img {
+            display: inline-block;
+            padding-left: 30px;
+            height: 80px;
+            vertical-align: bottom;
+
+
+        }
+        .working {
+            display: inline-block;
+            width: 200px;
+            height: 30px;
+            font-size: 30px;
+            color: #fff;
+            padding-bottom: 10px;
+        }
+        .container{
+            margin-top: 50px;
+            background-color: #f5f5f5;
+            padding-top: 50px;
+        }
+        .select1,.select2,.select3 {
+            width: 30%;
+            display: inline-block;
+            float: left;
+        }
+        .select1,.select2{
+            margin-right: 46px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <img src="static/images/logo-red.png" alt="">
+    <div class="working">卖家工作平台</div>
+</div>
+
+<div class="container">
+
+
+    <form class="form-horizontal" th:action="@{/publishgoods}" enctype="multipart/form-data" method="post">
+        <h4 >基础信息</h4>
+        <input type="hidden" th:value="${username}" name="username">
+        <input type="hidden" th:value="${storename}" name="storename">
+        <div class="form-group">
+            <label for="type" class="col-sm-2 control-label">
+                <span style="color: #e2231a;font-weight: 700">*</span>商品类型</label>
+            <div class="col-sm-10">
+                <input type="radio" name="type" id="type" value="全新">全新
+                <input type="radio" name="type"  value="二手">二手
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="goodsname" class="col-sm-2 control-label">
+                <span style="color: #e2231a;font-weight: 700">*</span>商品名称</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="goodsname" name="goodsname" >
+            </div>
+        </div>
+        <!--<div class="form-group">-->
+        <!--<label for="catalog" class="col-sm-2 control-label">-->
+        <!--<span style="color: #e2231a;font-weight: 700">*</span>商品分类</label>-->
+        <!--<div class="col-sm-10">-->
+        <!--<input type="text" class="form-control" id="catalog" name="catalog">-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!-- 下拉列表 -->
+        <div class="form-group">
+            <label for="catalog" class="col-sm-2 control-label">
+                <span style="color: #e2231a;font-weight: 700">*</span>商品分类</label>
+            <div class="col-sm-10">
+                <select class="form-control select1" name="catalog" id="catalog">
+
+                </select>
+                <select class="form-control select2" name="secondcatalog" id="secondcatalog">
+
+                </select>
+                <select class="form-control select3" name="brand" id="brand">
+
+                </select>
+            </div>
+        </div>
+
+
+        <!-- 下拉列表 -->
+
+
+
+        <!--<div class="form-group">-->
+        <!--<label for="brand" class="col-sm-2 control-label">-->
+        <!--<span style="color: #e2231a;font-weight: 700">*</span>商品品牌</label>-->
+        <!--<div class="col-sm-10">-->
+        <!--<input type="text" class="form-control" id="brand" name="brand">-->
+        <!--</div>-->
+        <!--</div>-->
+        <div class="form-group">
+            <label for="markettime" class="col-sm-2 control-label">
+                <span style="color: #e2231a;font-weight: 700">*</span>上市时间</label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control" id="markettime" name="markettime" >
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="purchaseplace" class="col-sm-2 control-label">
+                <span style="color: #e2231a;font-weight: 700">*</span>采购地</label>
+            <div class="col-sm-10">
+                <input type="radio" name="purchaseplace" id="purchaseplace" value="国内">国内
+                <input type="radio" name="purchaseplace"  value="二国外及港澳台手">国外及港澳台
+            </div>
+        </div>
+
+        <div style="height: 40px;">
+            销售信息
+        </div>
+        <div class="form-group">
+            <label for="price" class="col-sm-2 control-label">
+                <span style="color: #e2231a;font-weight: 700">*</span>价格</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="price" name="price">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="promotionprice" class="col-sm-2 control-label">
+                <span style="color: #e2231a;font-weight: 700">*</span>促销价格</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="promotionprice" name="promotionprice">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="nums" class="col-sm-2 control-label">
+                <span style="color: #e2231a;font-weight: 700">*</span>总数量</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="nums" name="nums">
+            </div>
+        </div>
+
+        <div style="height: 40px;">
+            图文描述
+        </div>
+        <div class="form-group">
+            <label for="image_1" class="col-sm-2 control-label">
+                <span style="color: #e2231a;font-weight: 700">*</span>图片一</label>
+            <div class="col-sm-10">
+                <input type="file" class="form-control" id="image_1" name="image_1">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="image_2" class="col-sm-2 control-label">图片二</label>
+            <div class="col-sm-10">
+                <input type="file" class="form-control" id="image_2" name="image_2">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="image_3" class="col-sm-2 control-label">图片三</label>
+            <div class="col-sm-10">
+                <input type="file" class="form-control" id="image_3" name="image_3">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="image_4" class="col-sm-2 control-label">图片四</label>
+            <div class="col-sm-10">
+                <input type="file" class="form-control" id="image_4" name="image_4">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="image_5" class="col-sm-2 control-label">图片五</label>
+            <div class="col-sm-10">
+                <input type="file" class="form-control" id="image_5" name="image_5">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description" class="col-sm-2 control-label">
+                <span style="color: #e2231a;font-weight: 700">*</span>描述信息</label>
+            <div class="col-sm-10">
+                <textarea name="content" id="content" class="form-control" cols="30" rows="10"></textarea>
+                <div style="display: none">
+                    <textarea name="description" id="description" class="form-control" cols="30" rows="10" type="hidden"></textarea>
+                </div>
+
+
+            </div>
+        </div>
+        <div style="height: 40px;">
+            物流信息
+        </div>
+        <div class="form-group">
+            <label for="address" class="col-sm-2 control-label">
+                <span style="color: #e2231a;font-weight: 700">*</span>发货地</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="address" name="address" >
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="express" class="col-sm-2 control-label">
+                <span style="color: #e2231a;font-weight: 700">*</span>快递信息</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="express" name="express" >
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" id="submit" class="btn btn-default">提交</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+<!--<form th:action="@{/logout}" method="post">-->
+<!--<input type="submit" value="注销">-->
+<!--</form>-->
+
+<script src="static/js/jquery-3.4.0.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="static/js/bootstrap.min.js"></script>
+
+<!--<script>-->
+<!--    var token = $("meta[name='_csrf']").attr("content");-->
+<!--    var header = $("meta[name='_csrf_header']").attr("content");-->
+<!--    $(document).ajaxSend(function (e, xhr, options) {-->
+<!--        xhr.setRequestHeader(header, token);-->
+<!--    });-->
+<!--</script>-->
+
+
+<script charset="utf-8" src="static/kindeditor/kindeditor-all.js"></script>
+<script charset="utf-8" src="static/kindeditor/lang/zh-CN.js"></script>
+<!-- <script charset="utf-8" src="../static/js/jquery-3.4.0.js"></script> -->
+<script>
+
+    KindEditor.ready(function(K) {
+        window.editor = K.create('#content',{
+            // 上传图片的名字
+            filePostName  : "uploadFile",
+            // 配置上传路径
+            uploadJson : '/uploadImg',
+            allowFileManager : true,
+            allowPreviewEmoticons: true,
+            allowImageUpload: true,
+            // 设置上传文件类型
+            dir : "image",
+            pasteType : 1,      //设置能否粘贴
+            items : [
+                'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+                'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+                'insertunorderedlist', '|', 'emoticons', 'image', 'link','fullscreen']
+
+        });
+    });
+    function save(){
+        //取得HTML内容?
+        //同步数据后可以直接取得textarea的value?
+        window.editor.sync();
+        html=document.getElementById('content').value;//原生API
+        console.log(html);
+        $("#description").html(html);
+        //$("#schtmlnr").val(html);//把KindEditor产生的html代码放到schtmlnr里面，用于提交
+    }
+
+
+</script>
+
+
+<script>
+    $("#submit").click(function () {
+        save();
+        $("#submit").submit();
+
+    })
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        function Init(node) {
+            return node.html("<option>---请选择---</option>");
+        }
+        //多维数组做数据来源
+        var db = {
+            男装: {
+                短裤: "安踏,justyle,李宁",
+                polo衫: "拜迪睿森,1977,1989",
+                休闲裤:"森马潮流,海蓝之家,361",
+            },
+            电脑办公: {
+                笔记本: "小米,苹果,Dell",
+                台式机: "联想,Dell,华硕",
+                一体机: "iMAC,Dell,联想",
+            },
+            大家电: {
+                冰箱: "海尔,TCL,美的",
+                洗衣机: "海信,海尔,小天鹅",
+                空调: "美的,格力,大金",
+            },
+            手机数码: {
+                手机: "小米,华为,iphone/Apple,vivo,oppo,realme,中兴,honor/荣耀，三星",
+                智能手环: "华为,小米,Apple",
+                数码相机: "索尼,佳能,柯达,松下,尼康",
+                手机配件: "数据线,耳机,蓝牙耳机,充电器",
+
+    },
+            食品生鲜:{
+                新鲜水果: "苹果,橙子,百香果,榴莲,火龙果,香蕉,车厘子,迷糊桃",
+                油粮调味: "米,食用油,方便食品,面,杂粮,花生油",
+            },
+            酒水饮料: {
+                探酒圈: "配制酒,起泡酒,精酿啤酒,小酒,青梅酒,蜂蜜酒",
+                中外名酒: "白酒,葡萄酒,啤酒,黄酒,收藏酒/陈年老酒",
+            },
+
+
+
+
+    };
+        //初始化select节点
+        $.each(db, function (changShang) {
+            $("#catalog").append("<option>" + changShang + "</option>");
+        })
+        //一级变动
+        $("#catalog").change(function () {
+            //清空二三级
+            Init($("#secondcatalog"));
+            Init($("#brand"));
+            $.each(db,function (cs,pps) {
+                if ($("#catalog option:selected").text() == cs) {
+                    $.each(pps, function (pp, xhs) {
+                        $("#secondcatalog").append("<option>" + pp + "</option>");
+                    });
+                    $("#secondcatalog").change(function () {
+                        Init($("#brand"));
+                        $.each(pps, function (pp,xhs) {
+                            if ($("#secondcatalog option:selected").text()==pp) {
+                                $.each(xhs.split(','), function () {
+                                    $("#brand").append("<option>" + this + "</option>");
+                                })
+                            }
+                        })
+                    })
+                }
+            })
+        })
+
+    })
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+             tools:context=".IndexFragment">
+    <LinearLayout
+                android:id="@+id/top"
+                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:background="@drawable/top_bg"
+                >
+        <Button
+
+                android:id="@+id/saoyisao"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="10dp"
+                android:scaleType="fitCenter"
+                android:background="@drawable/saoyisao"/>
+        <EditText
+                android:id="@+id/input"
+                android:clickable="true"
+                android:editable="false"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_height="30dp"
+                android:layout_width="252dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/top_edittext"
+            />
+        <Button
+                android:id="@+id/msg"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="12dp"
+                android:scaleType="fitCenter"
+                android:layout_marginLeft="10dp"
+
+                android:layout_marginTop="10dp"
+                android:background="@drawable/sousuo"/>
+
+
+    </LinearLayout>
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/top"
+            android:scrollbars="none"
+            android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout android:id="@+id/dd"
+              android:layout_height="wrap_content"
+                android:layout_below="@+id/top"
+              android:layout_width="wrap_content"
+
+              >
+
+    <com.youth.banner.Banner
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/banner_home"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_marginTop="0dp"
+            android:paddingTop="20dp"
+
+            android:background="@drawable/top_bg"
+            />
+
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/index_list"
+            android:layout_below="@+id/banner_home"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+    />
+</RelativeLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>

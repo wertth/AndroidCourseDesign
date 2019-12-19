@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="100dp"
+                android:background="@drawable/linear_border"
+                android:orientation="horizontal">
+    <TextView android:id="@+id/desc_his"
+              android:layout_height="wrap_content"
+              android:layout_centerVertical="true"
+              android:layout_width="wrap_content"
+              android:layout_marginLeft="25dp"
+              android:text="手机"
+              android:textColor="#333333"
+              android:textSize="20dp"
+        />
+    <Button android:id="@+id/his_qianwang"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="25dp"
+        android:background="@drawable/qianwang"/>
+
+
+
+</RelativeLayout>
+<!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--          android:layout_width="wrap_content"-->
+<!--          android:layout_height="wrap_content"-->
+<!--          android:layout_margin="5dp"-->
+<!--          android:background="@drawable/selector_wiki_drug_tag"-->
+<!--          android:text="二甲双胍">-->
+
+<!--</TextView>-->

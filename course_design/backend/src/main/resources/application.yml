@@ -1,0 +1,48 @@
+server:
+  port: 8090
+
+spring:
+  port: 8090
+  datasource:
+
+    url: jdbc:mysql://localhost:3306/android_design?serverTimezone=UTC
+    username: root
+    password: 123456
+
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 3
+      maximum-pool-size: 10
+      max-lifetime: 30000
+      connection-test-query: SELECT 1
+  mvc:
+    static-path-pattern: /static/**
+  resources:
+    static-locations: classpath:/static/
+
+
+
+mybatis:
+  type-aliases-package: com.donglei.myblog.entity
+
+#七牛云配置
+# 在七牛云官网注册，实名认证后，创建对象存储，获取下列key
+qiniu:
+  accessKey: ******
+  secretKey: ******
+  bucket: ******
+  path: ******
+baseUploadUrl: D:/course_design/images
+#baseUploadUrl: /usr/developer/images
+
+#img:
+#  #  location: C:/Users/18451/Desktop/upload
+#  location: /usr/develop/upload
+
+##pagehelper分页插件配置
+#pagehelper:
+#  helperDialect: mysql
+#  reasonable: true
+#  supportMethodsArguments: true
+#  params=count: countSql
+

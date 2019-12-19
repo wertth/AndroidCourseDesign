@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.orderActivity">
+    <RelativeLayout android:id="@+id/top_order"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="填写订单"
+                  android:layout_centerVertical="true"
+                  android:layout_centerHorizontal="true"
+
+            android:textSize="20dp"/>
+    </RelativeLayout>
+    <RelativeLayout android:id="@+id/addressOrder"
+                    android:layout_height="150dp"
+                    android:layout_below="@+id/top_order"
+                    android:layout_width="match_parent"
+                    android:paddingTop="15dp"
+                    android:layout_marginTop="5dp"
+                    android:paddingLeft="15dp"
+                    android:layout_marginLeft="7dp"
+                    android:background="@drawable/addressbackground"
+                    android:orientation="horizontal">
+        <TextView android:id="@+id/addr_order"
+            android:layout_height="30dp"
+            android:layout_width="match_parent"
+            android:text="湖南省湘潭市雨湖区护谭乡"
+                  android:textColor="#333333"
+            android:textSize="15dp"
+            />
+        <TextView android:id="@+id/address_order"
+                  android:layout_height="30dp"
+                  android:layout_marginTop="5dp"
+                  android:layout_below="@+id/addr_order"
+                  android:layout_width="380dp"
+
+                  android:text="湖南省湘潭市雨湖区湖南科技大学"
+                  android:textSize="20dp"
+                  android:textStyle="bold"
+                  android:textColor="#333333"/>
+        <TextView android:id="@+id/name_order"
+                  android:layout_height="30dp"
+                  android:layout_marginTop="15dp"
+                  android:layout_below="@+id/address_order"
+                  android:layout_width="80dp"
+                  android:textColor="#333333"
+                  android:text="李东雷"
+                  android:textSize="15dp"
+                  />
+        <TextView android:id="@+id/tel_order"
+                  android:layout_height="30dp"
+                  android:layout_marginTop="15dp"
+                  android:layout_below="@+id/address_order"
+                  android:layout_width="match_parent"
+                    android:layout_toRightOf="@+id/name_order"
+                  android:text="18451555601"
+                  android:textSize="15dp"
+                  android:textColor="#333333"
+        />
+
+    </RelativeLayout>
+    <RelativeLayout android:id="@+id/goods_order"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_below="@+id/addressOrder">
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/order_list"
+                android:layout_below="@+id/banner_home"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+        />
+
+<!--        <com.facebook.drawee.view.SimpleDraweeView android:id="@+id/iv_img_order"-->
+<!--                     android:layout_width="130dp"-->
+<!--                     android:layout_marginTop="5dp"-->
+<!--                     android:layout_marginLeft="5dp"-->
+<!--                     android:layout_height="130dp"-->
+<!--                     android:src="@drawable/shouji">-->
+<!--        </com.facebook.drawee.view.SimpleDraweeView>-->
+
+<!--        <TextView android:textAllCaps="false"-->
+<!--                  android:id="@+id/iv_title_order"-->
+<!--                  android:layout_toRightOf="@+id/iv_img_order"-->
+<!--                  android:layout_marginLeft="10dp"-->
+<!--                  android:layout_marginRight="10dp"-->
+<!--                  android:layout_marginTop="5dp"-->
+<!--                  android:textSize="17dp"-->
+<!--                  android:lines="2"-->
+<!--                  android:textColor="#333333"-->
+<!--                  android:ellipsize="end"-->
+<!--                  android:text="顺丰包邮 128G内存学生价大屏双卡双待手机"-->
+<!--                  android:layout_width="wrap_content"-->
+<!--                  android:layout_height="wrap_content"/>-->
+<!--        <TextView android:textAllCaps="false"-->
+<!--                  android:id="@+id/iv_price_order"-->
+<!--                  android:layout_toRightOf="@+id/iv_img_order"-->
+<!--                  android:layout_below="@+id/iv_title_order"-->
+<!--                  android:textSize="20dp"-->
+<!--                  android:layout_marginTop="30dp"-->
+<!--                  android:layout_marginLeft="7dp"-->
+<!--                  android:textColor="#ff0000"-->
+
+<!--                  android:text="￥50.00"-->
+<!--                  android:layout_width="wrap_content"-->
+<!--                  android:layout_height="wrap_content"/>-->
+
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/layout_border"
+                    android:orientation="horizontal"
+                    android:layout_alignParentBottom="true"
+                    android:paddingLeft="20dp"
+
+    >
+        <TextView
+                  android:layout_height="25dp"
+                  android:layout_alignParentBottom="true"
+                  android:layout_width="25dp"
+                  android:id="@+id/rmb"
+                  android:background="@drawable/rmb"
+                  android:layout_marginBottom="10dp"
+        />
+        <TextView android:id="@+id/allPrice"
+                  android:layout_toRightOf="@+id/rmb"
+                  android:layout_height="55dp"
+                  android:layout_centerVertical="true"
+                  android:layout_width="wrap_content"
+                  android:layout_alignParentBottom="true"
+                  android:text="19999"
+                  android:textSize="40dp"
+                  android:textColor="#ff1000"
+            />
+        <Button android:layout_height="40dp"
+                android:id="@+id/btn_buy_order"
+                android:layout_width="110dp"
+                android:text="立即购买"
+                android:textSize="16dp"
+                android:textColor="#fff"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/goods_info_btn"
+
+        />
+    </RelativeLayout>
+
+</RelativeLayout>

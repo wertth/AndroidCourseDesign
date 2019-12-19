@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.example.mall"
+        minSdkVersion 28
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:design:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+
+    implementation 'com.youth.banner:banner:1.4.10'
+
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
+    implementation 'com.hjm:BottomTabBar:1.1.1'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+
+    implementation 'com.alibaba:fastjson:1.2.32'
+    implementation 'com.squareup.okhttp3:okhttp:3.3.1'
+
+
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    implementation 'com.facebook.fresco:fresco:1.11.0'
+
+    // 支付宝 SDK AAR 包所需的配置
+    implementation(name: 'alipaySdk-15.6.8-20191021122514', ext: 'aar')
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation "com.android.support:appcompat-v7:28.0.0"
+
+    implementation 'com.smartTop:jd-address:1.0.3'
+
+    //glide 图片加载
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    //动态权限申请库
+    implementation 'pub.devrel:easypermissions:1.3.0'
+//适配器
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.1.3'
+    //流标签 https://github.com/hongyangAndroid/FlowLayout
+    implementation 'com.zhy:flowlayout-lib:1.0.3'
+
+    implementation 'com.android.support:design:28.0.0'
+
+
+
+}

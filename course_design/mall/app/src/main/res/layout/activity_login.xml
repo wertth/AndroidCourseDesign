@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.LoginActivity">
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_height="50dp"
+        android:hint="请输入用户名"
+        android:layout_width="300dp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="100dp"
+        android:textColor="#FF5722"
+        android:background="@drawable/edittext_shape"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+            android:id="@+id/password"
+            android:hint="请输入密码"
+            android:paddingLeft="10dp"
+            android:password="true"
+            android:layout_height="50dp"
+            android:layout_width="300dp"
+            android:layout_below="@+id/username"
+            android:layout_marginTop="50dp"
+            android:textColor="#FF5722"
+            android:background="@drawable/edittext_shape"
+            android:layout_centerHorizontal="true"/>
+
+    <Button android:id="@+id/submit"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/edittext_shape"
+        android:text="登录"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/password"
+        android:layout_marginTop="40dp"/>
+    <Button android:id="@+id/btn_face_login"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_shape"
+    android:text="刷脸登录"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="40dp"
+            android:layout_below="@id/submit"
+            android:layout_marginTop="30dp"/>
+    <!--            android:visibility="invisible"-->
+
+
+</RelativeLayout>

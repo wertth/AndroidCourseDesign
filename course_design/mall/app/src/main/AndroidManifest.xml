@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.mall">
+    <!-- 网络图片需要获取网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET"/> <!-- 本地图片文件读写权限获取 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <supports-screens
+            android:anyDensity="true"
+            android:largeScreens="true"
+            android:normalScreens="true"
+            android:resizeable="true"
+            android:smallScreens="true"/>
+
+    <application
+            android:name=".utils.MyApplication"
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:networkSecurityConfig="@xml/network_security_config"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme"
+            android:usesCleartextTraffic="true">
+        <activity android:name=".list_goods2Activity">
+        </activity>
+        <activity android:name=".activity.SaoActivity"
+            android:label="商品识别">
+        </activity>
+        <activity android:name=".activity.CollectActivity">
+        </activity>
+
+        <provider
+                android:name="android.support.v4.content.FileProvider"
+                android:authorities="com.example.mall.fileprovider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/file_paths"/>
+        </provider>
+
+        <activity android:name=".TakePhoto"
+            android:label="刷脸登录">
+        </activity>
+        <activity android:name=".activity.sellSuccessActivity">
+        </activity>
+        <activity android:name=".activity.Order_his">
+        </activity>
+        <activity android:name=".activity.orderActivity">
+        </activity>
+        <activity android:name=".activity.searchActivity">
+        </activity>
+        <activity android:name=".activity.GoodsInfoActivity">
+        </activity>
+        <activity android:name=".activity.RegisterActivity">
+        </activity>
+        <activity android:name=".recyclerview.list_goodsActivity">
+        </activity>
+        <activity android:name=".activity.settingActivity"
+            android:label="设置中心">
+        </activity>
+        <activity android:name=".activity.LoginActivity"
+                  android:label="登录">
+        </activity>
+        <activity
+                android:name=".Main2Activity"
+                android:label="@string/title_activity_main2">
+        </activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".alipay.PayDemoActivity"
+                android:icon="@drawable/msp_icon"
+                android:label="@string/app_name">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+                android:name=".alipay.H5PayDemoActivity"
+                android:configChanges="orientation|keyboardHidden|navigation"
+                android:exported="false"
+                android:screenOrientation="behind">
+        </activity>
+    </application>
+
+</manifest>
